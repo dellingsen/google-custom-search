@@ -1,0 +1,30 @@
+<!--<div class="container-fluid text-left">-->
+<div class="bg login-wrapper">
+    <div ng-controller="LoginController">
+        <form name="loginForm">
+
+            <p>Username:</p>
+            <input type="text" name="username" ng-model="username" required>
+            <span style="color:red" ng-show="loginForm.username.$dirty && loginForm.username.$invalid">
+            <span ng-show="loginForm.username.$error.required">Username is required.</span>
+            </span>
+
+            <p>Password:</p>
+            <input type="text" name="password" ng-model="password" required>
+            <span style="color:red" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+            <span ng-show="loginForm.password.$error.required">User password is required.</span>
+            </span>
+            <br><br>
+            <button ng-click="submit()" ng-disabled="loginForm.username.$dirty &&
+                                                     loginForm.username.$invalid">
+                Login</button>
+
+            <div ng-show="errorMsg != null">
+                {{ errorMsg }}
+            </div>
+
+        </form>
+        <br><br>
+    </div>
+
+</div>

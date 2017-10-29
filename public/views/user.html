@@ -1,0 +1,27 @@
+<div class="container-fluid text-left">
+    <h2>User GET API Results</h2>
+
+    <p>User results list from service:</p>
+
+
+    <div ng-show="userList != null">
+
+        <p>How many users: {{ userSize }}</p>
+        <br><br>
+
+        <p>Users in Angular ng-repeat loop:</p>
+        <li ng-repeat="user in userList">
+            <br>
+            First: {{ user.firstname }} <br>
+            Last: {{ user.lastname }} <br>
+            Username: {{ user.username }} <br>
+            Password: {{ user.password }} <br>
+            Email: {{user.email}} <br>
+        </li>
+    </div>
+
+    <div ng-show="errorMsg != null">
+        {{ errorMsg }}
+    </div>
+
+</div>

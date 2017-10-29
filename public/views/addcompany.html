@@ -1,0 +1,26 @@
+<div class="container-fluid text-left">
+
+    <div ng-controller="AddCompanyController">
+        <form name="companyForm" validate>
+
+            <p>Company Name(s):</p>
+            <input type="text" name="companyname" ng-model="companyname" required>
+            <span style="color:red" ng-show="companyForm.companyname.$dirty && companyForm.companyname.$invalid">
+            <span ng-show="companyForm.companyname.$error.required">Company name is required.</span>
+            </span>
+            <br/><br/>
+            <button ng-click="save()" ng-disabled="companyForm.companyname.$dirty &&
+                                                   companyForm.companyname.$invalid">
+                Save</button>
+            <button ng-click="reset()">Reset</button>
+        </form>
+        <br/><br/>
+        <ul ng-repeat="company in companyResults">
+            Company name: {{ company.companyname }} <br/> Company url:  {{ company.companyurl }}
+        </ul>
+        <div ng-show="errorMsg != null">
+            {{ errorMsg }}
+        </div>
+    </div>
+
+</div>
